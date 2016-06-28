@@ -1,0 +1,7 @@
+const AppSettings = {
+<% constants.forEach(function(constant) { %>
+    <%- constant.name %>: <%= constant.value %>,
+<% }) %>
+};
+
+export default AppSettings;

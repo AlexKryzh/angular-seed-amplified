@@ -1,0 +1,8 @@
+{
+  "tag-pair": true,
+  "doctype-first": false,
+  "tagname-lowercase": true,
+  "attr-lowercase": false,
+  "title-require": false,
+  "info": "https://github.com/yaniswang/HTMLHint/wiki/Rules"
+}

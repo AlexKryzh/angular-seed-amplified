@@ -1,0 +1,12 @@
+{
+    "views.main.Splendid!": "Splendid!",
+    "directives.language-select.Language": "Language",
+    "page": {
+        "home": {
+            "title": "Home"
+        },
+        "styleguide": {
+            "title": "Style Guide"
+        }
+    }
+}

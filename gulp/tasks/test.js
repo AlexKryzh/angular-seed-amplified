@@ -1,10 +1,9 @@
-'use strict';
-
 import gulp        from 'gulp';
 import runSequence from 'run-sequence';
 
-gulp.task('test', ['browserSync'], function() {
+gulp.task('test', ['server'], function(cb) {
 
-  return runSequence('unit', 'protractor');
+    cb = cb || function() {};
+    return runSequence('test:Unit', 'test:Functional', cb);
 
 });

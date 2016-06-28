@@ -1,10 +1,21 @@
-'use strict';
-
-import fs          from 'fs';
-import onlyScripts from './util/scriptFilter';
+import fs                            from 'fs';
+import gulp                        from 'gulp';
+import onlyScripts             from './util/scriptFilter';
+import CacheBuster          from 'gulp-cachebust';
 
 const tasks = fs.readdirSync('./gulp/tasks/').filter(onlyScripts);
 
+global.cachebust = new CacheBuster();
+
+// Ensure process ends after all Gulp tasks are finished
+gulp.on('stop', function () {
+    if ( !global.isWatching ) {
+        process.nextTick(function () {
+            process.exit(0);
+        });
+    }
+});
+
 tasks.forEach((task) => {
-  require('./tasks/' + task);
+    require('./tasks/' + task);
 });

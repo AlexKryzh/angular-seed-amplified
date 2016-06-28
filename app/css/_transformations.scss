@@ -1,0 +1,13 @@
+@for $degree from 0 through 35{
+    .transformation-rotate-#{$degree*10}{
+        transform: rotate(#{$degree*10}deg);
+    }
+}
+
+.transformation-flip-horizontal {
+    transform: scale(-1, 1);
+}
+
+.transformation-flip-vertical {
+    transform: scale(1, -1);
+}

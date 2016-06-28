@@ -1,0 +1,12 @@
+{
+    "views.main.Splendid!": "Ben!",
+    "directives.language-select.Language": "Idioma",
+    "page": {
+        "home": {
+            "title": "Inicio"
+        },
+        "styleguide": {
+            "title": "Guía de estilo"
+        }
+    }
+}

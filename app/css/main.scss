@@ -1,0 +1,64 @@
+@import 'fonts';
+@import 'icons';
+@import 'variables';
+@import 'bootstrap';
+@import 'sprite';
+@import 'type';
+@import 'animations';
+@import 'transformations';
+
+body {
+    padding-top: 70px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+sprite{
+    display: inline-block;
+    .sprite{
+        display: inline-block;
+        svg{
+            height: inherit;
+            width: inherit;
+        }
+    }
+}
+
+//App Loading
+#app-loading{
+    background-color: $gray-base;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    span{
+        display: block;
+        left: 50%;
+        position: relative;
+        top: 50%;
+        height: 64px;
+        width: 64px;
+        font-size: 64px;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        &:hover{
+            animation-play-state: paused;
+        }
+    }
+}
+
+p {
+    @include font-size(14px);
+}
+
+.polygons{
+    background: url('../images/polygon.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+}
+
