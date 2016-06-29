@@ -1,6 +1,11 @@
 {
-    "views.main.Splendid!": "Splendid!",
     "directives.language-select.Language": "Language",
+    "header":{
+        "menu":{
+            "home": "Home",
+            "style-guide": "StyleGuide"
+        }
+    },
     "page": {
         "home": {
             "title": "Home"

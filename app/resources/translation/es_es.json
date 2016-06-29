@@ -1,6 +1,11 @@
 {
-    "views.main.Splendid!": "Ben!",
     "directives.language-select.Language": "Idioma",
+    "header":{
+        "menu":{
+            "home": "Inicio",
+            "style-guide": "Guía de estilo"
+        }
+    },
     "page": {
         "home": {
             "title": "Inicio"

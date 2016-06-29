@@ -1,23 +1,31 @@
 <div>
+    <h3>Filters</h3>
     <p>{{ '    foo   ' | trim }}</p>
     <p>{{ 'foobarfoo' | trim: 'foo' }}</p>
 </div>
-<span>{{ 35 | currency}}</span>
-<br>
-<span>{{ '2016-09-22' | date}}</span>
-<div class="icon icon-cross"></div>
+
 <div>
-    <a ng-href="" class="btn btn-info" ng-click="home.getProducts()">Get Items</a>
+    <h3>Location formats</h3>
+    <span>{{ 35 | currency}}</span>
+    <br>
+    <span>{{ '2016-09-22' | date}}</span>
 </div>
 
 <div>
-    <sprite symbol="'pin'" class="animation-pulse"></sprite>
+    <h3>Mocks (available in 'gulp mocks' task)</h3>
+    <div>
+        <a ng-href="" class="btn btn-info" ng-click="home.getProducts()">Get Items</a>
+    </div>
 </div>
-
-<div><img src="images/angular.png"></div>
-
-<div class="polygons"></div>
 
 <ul ng-show="home.products.length>0">
     <li ng-repeat="product in home.products">{{product.name}}</li>
 </ul>
+
+<div>
+    <h3>Icon, Animation</h3>
+    <span class="icon icon-cross animation-spin"></span>
+</div>
+
+<br>
+<br>
