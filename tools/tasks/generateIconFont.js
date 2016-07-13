@@ -27,7 +27,7 @@ gulp.task('generate:IconFont', function() {
                     className: 'icon'
                 }))
                 .pipe(rename('_icons.scss'))
-                .pipe(gulp.dest('app/css/'));
+                .pipe(gulp.dest('src/css/'));
         })
         .pipe(gulp.dest(config.iconsfont.dest))
         .pipe(browserSync.stream());

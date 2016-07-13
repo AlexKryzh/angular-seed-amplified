@@ -3,6 +3,8 @@ import gulp                        from 'gulp';
 import onlyScripts             from './util/scriptFilter';
 import CacheBuster          from 'gulp-cachebust';
 
+global.browserSync = require('browser-sync').create();
+
 const tasks = fs.readdirSync('./tools/tasks/').filter(onlyScripts);
 
 global.cachebust = new CacheBuster();
