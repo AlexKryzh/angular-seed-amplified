@@ -17,20 +17,20 @@ reports
 temp_babel
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+dist/Release
 
 # Dependency directories
 node_modules
 
 # Build files
-build
-app/js/*_tpl.js
-app/js/settings/constants.js
-app/css/_fonts.scss
-app/css/_icons.scss
-app/fonts/icons.*
-app/modules/**/*_tpl.js
-app/modules/**/*_css.js
+dist
+src/js/*_tpl.js
+src/js/settings/constants.js
+src/css/_fonts.scss
+src/css/_icons.scss
+src/fonts/icons.*
+src/modules/**/*_tpl.js
+src/modules/**/*_css.js
 
 #webstorm
 .idea
