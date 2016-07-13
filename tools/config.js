@@ -7,8 +7,8 @@ export default {
     browserPort: 3000,
     UIPort: 3001,
 
-    sourceDir: './app/',
-    buildDir: './build/',
+    sourceDir: './src/',
+    buildDir: './dist/',
     tempDir: './temp/',
 
     environment: {
@@ -41,70 +41,70 @@ export default {
     },
 
     favicons: {
-        src: 'app/images/favicon/favicon.svg',
-        dest: 'build/images/favicons/',
+        src: 'src/images/favicon/favicon.svg',
+        dest: 'dist/images/favicons/',
         path: '/images/favicons/',
         data: 'faviconData.json'
     },
 
     styles: {
-        dev: 'app/css/',
-        src: 'app/css/**/*.scss',
-        dest: 'build/css',
+        dev: 'src/css/',
+        src: 'src/css/**/*.scss',
+        dest: 'dist/css',
         prodSourcemap: false,
         autoprefixer: ['last 5 version', '> 0.1%', 'ie 9'],
         sassIncludePaths: []
     },
 
     locale: {
-        src: 'app/resources/locale/*.js',
-        dest: 'build/resources/locale'
+        src: 'src/resources/locale/*.js',
+        dest: 'dist/resources/locale'
     },
 
     translation: {
-        src: 'app/resources/translation/*.json',
-        dest: 'build/resources/translation'
+        src: 'src/resources/translation/*.json',
+        dest: 'dist/resources/translation'
     },
 
     mocks: {
-        src: 'app/resources/mocks/*.json',
-        dest: 'build/resources/mocks'
+        src: 'src/resources/mocks/*.json',
+        dest: 'dist/resources/mocks'
     },
 
     scripts: {
-        dev: 'app/js/',
+        dev: 'src/js/',
         index: 'app.js',
-        src: 'app/js/**/*.js',
-        dest: 'build/js',
+        src: 'src/js/**/*.js',
+        dest: 'dist/js',
         files: '**/*.js',
-        jshint: ['app/js/**/*.js', 'app/modules/**/*.js', '!app/modules/**/*_tpl.js', '!app/modules/**/*_spec.js', '!app/modules/**/*_css.js', '!app/js/**/*_tpl.js']
+        jshint: ['src/js/**/*.js', 'src/modules/**/*.js', '!src/modules/**/*_tpl.js', '!src/modules/**/*_spec.js', '!src/modules/**/*_css.js', '!src/js/**/*_tpl.js']
     },
 
     ngconstants: {
-        tpl: 'gulp/util/constant.tpl.ejs',
+        tpl: 'tools/util/constant.tpl.ejs',
         name: 'constants.js',
-        dest: 'app/js/settings'
+        dest: 'src/js/settings'
     },
 
     iconsfont:{
         name: 'icons',
-        template: 'gulp/util/iconsfont.css',
-        src:  'app/images/icons/**/*.svg',
-        dest: 'app/fonts'
+        template: 'tools/util/iconsfont.css',
+        src:  'src/images/icons/**/*.svg',
+        dest: 'src/fonts'
     },
 
     sprite: {
-        src: 'app/images/sprite/**/*.svg',
+        src: 'src/images/sprite/**/*.svg',
         file: 'sprite.svg',
         path: '../images/',
-        template: 'app/templates/partials/sprite.html',
-        templateDir: 'app/templates/partials/'
+        template: 'src/templates/partials/sprite.html',
+        templateDir: 'src/templates/partials/'
     },
 
     images: {
-        dir: 'app/images/',
-        src: ['app/images/**/*.png', 'app/images/**/*.jpg', 'app/images/**/*.gif', 'app/images/**/*.svg', '!app/images/sprite/*', '!app/images/icons/*', '!app/images/favicon/*'],
-        dest: 'build/images'
+        dir: 'src/images/',
+        src: ['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.svg', '!src/images/sprite/*', '!src/images/icons/*', '!src/images/favicon/*'],
+        dest: 'dist/images'
     },
 
     fonts: {
@@ -130,31 +130,31 @@ export default {
     ],
 
     templates: {
-        index: 'app/index.html',
-        src: 'app/templates/**/*.htm*',
-        dest: 'app/js/'
+        index: 'src/index.html',
+        src: 'src/templates/**/*.htm*',
+        dest: 'src/js/'
     },
 
     modules: {
-        src: 'app/modules/',
-        styles: 'app/modules/**/*.scss',
-        templates: 'app/modules/**/*.htm*',
-        scripts: 'app/modules/**/*.js',
-        tests: '!app/modules/**/*_spec.js'
+        src: 'src/modules/',
+        styles: 'src/modules/**/*.scss',
+        templates: 'src/modules/**/*.htm*',
+        scripts: 'src/modules/**/*.js',
+        tests: '!src/modules/**/*_spec.js'
     },
 
     gzip: {
-        src: 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
-        dest: 'build/',
+        src: 'dist/**/*.{html,xml,json,css,js,js.map,css.map}',
+        dest: 'dist/',
         options: {}
     },
 
     info: {
-        src: 'build/**/*.*'
+        src: 'dist/**/*.*'
     },
 
     babel: {
-        src: ['app/**/*.js', '!app/resources/**/*.js', '!app/**/*_css.js', '!app/**/*_tpl.js', '!app/**/*_spec.js', '!app/**/index.js'],
+        src: ['src/**/*.js', '!src/resources/**/*.js', '!src/**/*_css.js', '!src/**/*_tpl.js', '!src/**/*_spec.js', '!src/**/index.js'],
         dest: 'temp_babel'
     },
 
