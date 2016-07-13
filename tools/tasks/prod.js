@@ -13,7 +13,6 @@ gulp.task('prod', ['delete:Files'], function(cb) {
 
     runSequence(
         [
-            'combine:Svg',
             'generate:IconFont',
             'generate:Favicons'
         ],

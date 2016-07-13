@@ -10,6 +10,7 @@ export default {
     sourceDir: './src/',
     buildDir: './dist/',
     tempDir: './temp/',
+    destFiles: './dist/**/*',
 
     environment: {
         development: {
@@ -93,23 +94,15 @@ export default {
         dest: 'src/fonts'
     },
 
-    sprite: {
-        src: 'src/images/sprite/**/*.svg',
-        file: 'sprite.svg',
-        path: '../images/',
-        template: 'src/templates/partials/sprite.html',
-        templateDir: 'src/templates/partials/'
-    },
-
     images: {
         dir: 'src/images/',
-        src: ['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.svg', '!src/images/sprite/*', '!src/images/icons/*', '!src/images/favicon/*'],
+        src: ['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.svg', '!src/images/icons/*', '!src/images/favicon/*'],
         dest: 'dist/images'
     },
 
     fonts: {
-        icons: 'app/fonts/icons*',
-        src: ['app/fonts/*', '!app/fonts/icons*'],
+        icons: 'src/fonts/icons*',
+        src: ['src/fonts/*', '!src/fonts/icons*'],
         dest: 'build/fonts'
     },
 
