@@ -1,8 +1,6 @@
-'use strict';
-
 require('babel-core/register');
 
-var gulpConfig = require('../gulp/config');
+var gulpConfig = require('../tools/config');
 
 exports.config = {
 
@@ -28,9 +26,9 @@ exports.config = {
     },
 
     // The file path to the selenium server jar () 
-    //seleniumServerJar: './node_modules/protractor/selenium/selenium-server-standalone-2.47.1.jar',
+    //seleniumServerJar: './../node_modules/protractor/selenium/selenium-server-standalone-2.52.0.jar',
 
-    chromeDriver: './../node_modules/protractor/selenium/chromedriver',
+    chromeDriver: './../node_modules/protractor/selenium/chromedriver_2.21',
 
     specs: [
         'e2e/**/*_spec.js'

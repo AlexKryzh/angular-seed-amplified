@@ -4,12 +4,15 @@ import express        from 'express';
 import gulp              from 'gulp';
 import {
     protractor,
+    webdriver_update,
     webdriver
 } from 'gulp-protractor';
 
+gulp.task('update:Webdriver', webdriver_update);
+
 gulp.task('launch:Webdriver', webdriver);
 
-gulp.task('test:Functional', ['launch:Webdriver'], function(cb) {
+gulp.task('test:Functional', ['update:Webdriver', 'launch:Webdriver'], function(cb) {
 
     const testFiles = gulp.src('test/e2e/**/*_spec.js');
 

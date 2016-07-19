@@ -1,5 +1,3 @@
-'use strict';
-
 const istanbul = require('browserify-istanbul');
 const isparta  = require('isparta');
 
@@ -9,7 +7,7 @@ const karmaBaseConfig = {
     singleRun: true,
     frameworks: ['jasmine', 'browserify'],
     preprocessors: {
-        'app/@(js|modules)/**/!(*spec|*tpl|*css|index).js': ['browserify', 'coverage']
+        'src/@(js|modules)/**/!(*spec|*tpl|*css|index).js': ['browserify', 'coverage']
     },
     browsers: ['Chrome'],
     reporters: ['progress', 'coverage'],
@@ -39,7 +37,7 @@ const karmaBaseConfig = {
             istanbul({
                 instrumenter: isparta,
                 instrumenterConfig: { embedSource: true },
-                ignore: ['**/node_modules/**', '**/test/**', '**/app/js/mocks/**/*.js', '**/*_spec.js', '**/*_tpl.js', '**/*_css.js', '**/index.js', '**/app/js/settings/mocks.js']
+                ignore: ['**/node_modules/**', '**/test/**', '**/src/js/mocks/**/*.js', '**/*_spec.js', '**/*_tpl.js', '**/*_css.js', '**/index.js', '**/src/js/settings/mocks.js']
             })
         ]
     },
@@ -52,7 +50,7 @@ const karmaBaseConfig = {
 
     files: [
         // app-specific code
-        { pattern: 'app/@(js|modules)/**/!(*tpl|*css|index).js', included: true },
+        { pattern: 'src/@(js|modules)/**/!(*tpl|*css|index).js', included: true },
 
         // 3rd-party resources
         { pattern: 'node_modules/angular-mocks/angular-mocks.js', watched: false },
