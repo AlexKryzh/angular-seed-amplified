@@ -17,7 +17,7 @@ gulp.task('test:Functional', ['update:Webdriver', 'launch:Webdriver'], function(
     const testFiles = gulp.src('test/e2e/**/*_spec.js');
 
     testServer({
-        port: config.browserPort,
+        port: config.testPort,
         dir: config.buildDir
     }).then((server) => {
         testFiles.pipe(protractor({
