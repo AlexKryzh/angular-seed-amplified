@@ -50,9 +50,10 @@ export default {
     },
 
     styles: {
-        dev: 'src/css/',
-        src: 'src/css/**/*.scss',
-        dest: 'dist/css',
+        dev: 'src/styles/',
+        src: 'src/styles/**/*.scss',
+        dest: 'dist/styles',
+        icons: '_icons.scss',
         prodSourcemap: false,
         autoprefixer: ['last 5 version', '> 0.1%', 'ie 9'],
         sassIncludePaths: []
@@ -74,18 +75,18 @@ export default {
     },
 
     scripts: {
-        dev: 'src/js/',
+        dev: 'src/scripts/',
         index: 'app.js',
-        src: 'src/js/**/*.js',
-        dest: 'dist/js',
+        src: 'src/scripts/**/*.js',
+        dest: 'dist/scripts',
         files: '**/*.js',
-        jshint: ['src/js/**/*.js', 'src/modules/**/*.js', '!src/modules/**/*_tpl.js', '!src/modules/**/*_spec.js', '!src/modules/**/*_css.js', '!src/js/**/*_tpl.js']
+        jshint: ['src/scripts/**/*.js', 'src/modules/**/*.js', '!src/modules/**/*_tpl.js', '!src/modules/**/*_spec.js', '!src/modules/**/*_css.js', '!src/scripts/**/*_tpl.js']
     },
 
     ngconstants: {
         tpl: 'tools/util/constant.tpl.ejs',
         name: 'constants.js',
-        dest: 'src/js/settings'
+        dest: 'src/scripts/settings'
     },
 
     iconsfont:{
@@ -126,7 +127,7 @@ export default {
     templates: {
         index: 'src/index.html',
         src: 'src/templates/**/*.htm*',
-        dest: 'src/js/'
+        dest: 'src/scripts/'
     },
 
     modules: {

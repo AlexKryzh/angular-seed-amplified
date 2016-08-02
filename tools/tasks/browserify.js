@@ -26,7 +26,7 @@ function createSourcemap() {
 
 function buildScript(file) {
     let bundler = browserify({
-        entries: [config.sourceDir + 'js/' + file],
+        entries: [config.scripts.dev + file],
         debug: createSourcemap(),
         cache: {},
         packageCache: {},

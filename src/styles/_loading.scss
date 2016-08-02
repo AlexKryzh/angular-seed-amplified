@@ -1,0 +1,23 @@
+#app-loading{
+    background-color: $gray-base;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    span{
+        color: #fff;
+        display: block;
+        font-size: 64px;
+        left: 50%;
+        margin: -32px 0 0 -32px;
+        position: relative;
+        top: 50%;
+        height: 64px;
+        width: 64px;
+        &:hover{
+            animation-play-state: paused;
+        }
+    }
+}

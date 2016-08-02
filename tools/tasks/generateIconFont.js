@@ -15,7 +15,7 @@ gulp.task('generate:IconFont', function() {
             fontName: config.iconsfont.name,
             normalize: true,
             appendUnicode: true, // recommended option
-            formats: ['ttf', 'eot', 'woff'], // default, 'woff2' and 'svg' are available
+            formats: ['woff'], // default, 'woff2' and 'svg' are available
             timestamp: runTimestamp, // recommended to get consistent builds when watching files
         }))
         .on('glyphs', function(glyphs, options) {
@@ -26,8 +26,8 @@ gulp.task('generate:IconFont', function() {
                     fontPath: '../fonts/',
                     className: 'icon'
                 }))
-                .pipe(rename('_icons.scss'))
-                .pipe(gulp.dest('src/css/'));
+                .pipe(rename(config.styles.icons))
+                .pipe(gulp.dest(config.styles.dev));
         })
         .pipe(gulp.dest(config.iconsfont.dest))
         .pipe(browserSync.stream());

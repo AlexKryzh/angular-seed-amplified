@@ -24,10 +24,10 @@ node_modules
 
 # Build files
 dist
-src/js/*_tpl.js
-src/js/settings/constants.js
-src/css/_fonts.scss
-src/css/_icons.scss
+src/scripts/*_tpl.js
+src/scripts/settings/constants.js
+src/styles/_fonts.scss
+src/styles/_icons.scss
 src/fonts/icons.*
 src/modules/**/*_tpl.js
 src/modules/**/*_css.js
