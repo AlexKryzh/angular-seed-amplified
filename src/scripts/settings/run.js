@@ -7,6 +7,22 @@ function OnRun($rootScope, $translate, AppSettings, $log) {
     //Print AppSettings in console
     $log.debug('AppSettings: ', AppSettings);
 
+    //Switch body scroll
+    $rootScope.$on('$switchPageScroll', (event, args) => {
+        $rootScope.hidePageScroll  = args.status;
+    });
+
+    //Switch general loading
+    $rootScope.$on('$switchLoading', (event, args) => {
+        $rootScope.hideLoading  = args.status;
+        $rootScope.hidePageScroll  = !args.status;
+    });
+
+    //Switch menu navigation
+    $rootScope.switchNav = function(status = !$rootScope.openNav){
+        $rootScope.openNav = status;
+    };
+
     //change page based on state
     $rootScope.$on('$stateChangeSuccess', (event, toState) => {
 

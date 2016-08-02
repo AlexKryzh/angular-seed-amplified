@@ -1,0 +1,137 @@
+@import '../../styles/variables';
+
+#page-items{
+    .items{
+        padding: 0;
+        header{
+            margin-bottom: 20px;
+            h2{
+                font-size: 18px;
+            }
+        }
+        li{
+            list-style: none;
+        }
+        .labels{
+            text-transform: capitalize;
+        }
+        .item{
+            margin-bottom: 30px;
+            position: relative;
+            h1{
+                font-size: 18px;
+                .btn{
+                    position: relative;
+                    top: -4px;
+                    font-size: 26px;
+                    line-height: 23px;
+                    margin-right: 10px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                .btn-default{
+                    .icon{
+                        color: $gray-less-lighter;
+                    }
+                }
+            }
+            .image{
+                height: auto;
+                width: 100%;
+            }
+            .price{
+                color: #fff;
+                font-size: 24px;
+                font-weight: 400;
+                position: absolute;
+                right: 20px;
+                text-shadow: 1px 1px 5px rgba(0,0,0,.7);
+                top: 10px;
+                z-index: 10;
+            }
+            .description, .email{
+                display: block;
+            }
+            .email{
+                margin-top: 10px;
+            }
+        }
+        footer{
+            margin-top: 20px;
+            h4{
+                margin-bottom: 0;
+            }
+            .pagination{
+                li{
+                    a{
+                        .icon{
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #favorites{
+        .modal-header{
+            .icon-close{
+                font-size: 32px;
+            }
+        }
+        .modal-body{
+            form{
+                margin-bottom: 20px;
+            }
+            .favorites{
+                padding-left: 20px;
+                li{
+                    font-size: 20px;
+                    list-style: none;
+                    margin-bottom: 20px;
+                    .icon-remove{
+                        font-size: 24px;
+                    }
+                    .image{
+                        height: auto;
+                        margin-bottom: 0;
+                        min-width: 75px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .modal-footer{
+            .btn{
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1px) and (max-width : $screen-sm - 1){
+    #page-items{
+        .properties{
+            .btn-favorite{
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+        .col-xs-6:nth-child(2n + 3){
+            clear: both;
+        }
+    }
+}
+
+@media screen and (min-width : $screen-sm){
+    #page-items{
+        .properties{
+            .btn-favorite{
+                float: right;
+            }
+        }
+        .col-sm-4:nth-child(3n + 4){
+            clear: both;
+        }
+    }
+}

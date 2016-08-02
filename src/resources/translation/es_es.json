@@ -1,17 +1,61 @@
 {
-    "directives.language-select.Language": "Idioma",
+    "directives":{
+        "language-select":{
+            "Language": "Idioma"
+        },
+        "filter_options":{
+            "sorting":{
+                "default": "por defecto",
+                "title_asc": "título (ascendente)",
+                "title_desc": "título (descendente)",
+                "description_asc": "descripción (ascendente)",
+                "description_desc": "descripción (descendente)",
+                "email_asc": "email (ascendente)",
+                "email_desc": "email (descendente)",
+                "price_lowest": "los precios más bajos",
+                "price_highest": "los precios más altos"
+            }
+        },
+        "items":{
+            "filter": "búsqueda",
+            "filter_placeholder": "Buscar artículo...",
+            "sort": "ordenación",
+            "loading": "Recibiendo Datos...",
+            "empty": "No tenemos articulos en este momento.",
+            "notfound": "Artículos no encontrados.",
+            "page_no_items": "Esta página no tiene contenido, la última página con artículos: ",
+            "error": "Lo sentimos, no podemos mostrar información solicitada en este momento."
+        },
+        "item":{
+            "show_description": "Descripción"
+        }
+    },
     "header":{
         "menu":{
             "home": "Inicio",
-            "style-guide": "Guía de estilo"
+            "items": "Artículos",
+            "style_guide": "Guía de estilo"
         }
     },
     "page": {
         "home": {
-            "title": "Inicio"
+            "title": "Inicio",
+            "button": "Mostrar Artículos"
+        },
+        "items": {
+            "title": "Artículos",
+            "favorite_items": "Artículos favoritos",
+            "favorite_add": "Agregar a la Lista de Favoritos",
+            "favorite_remove": "Quitar de la Lista de Favoritos"
         },
         "styleguide": {
             "title": "Guía de estilo"
         }
+    },
+    "common": {
+        "close": "cerrar",
+        "remove": "borrar",
+        "page": "Página",
+        "of": "de"
     }
 }

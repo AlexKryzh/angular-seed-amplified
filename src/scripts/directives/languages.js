@@ -1,20 +1,21 @@
-function TranslateLanguage(LocalizationService) {
+function LanguagesDrct(LocalizationService) {
     'ngInject';
     return {
-        restrict: 'A',
+        restrict: 'E',
         replace: true,
-        templateUrl: 'directives/translate-language.html',
+        templateUrl: 'directives/languages.html',
         link: function ($scope) {
             $scope.languages = LocalizationService.get();
             $scope.current = LocalizationService.getCurrent();
             $scope.changeLanguage = function (locale) {
                 $scope.current = LocalizationService.set(locale);
+                $scope.switchNav(false);
             };
         }
     };
 }
 
 export default {
-  name: 'translateLanguage',
-  fn: TranslateLanguage
+  name: 'languages',
+  fn: LanguagesDrct
 };

@@ -1,0 +1,32 @@
+<section class="items">
+    <header>
+        <h1>{{ "page.items.title" | translate }}</h1>
+        <filter-options reload-items="reloadItems" options="options" switch-favorites-list="switchFavoritesList"></filter-options>
+        <h2>{{ "common.page" | translate }} {{currentPage}} {{ "common.of" | translate }} {{lastPage}}</h2>
+    </header>
+    <ul ng-hide="items.length === 0" class="row items" itemscope itemtype="http://schema.org/ItemList">
+        <li class="col-xs-6 col-sm-4 col-item" ng-repeat="item in filtered = (items | fields:options.filter:['title', 'description', 'email', 'price'] | orderBy:options.sort.expression:options.sort.reverse) | limitTo:step:((currentPage-1)*step)">
+            <item data="item" switch-favorite="switchFavorite"></item>
+        </li>
+    </ul>
+
+    <div class="alert alert-{{options.alert.type}}" ng-hide="items.length > 0">
+        {{ options.alert.text | translate }}
+    </div>
+
+    <div class="alert alert-info" ng-class="{'animation-short-shake': filtered.length === 0}" ng-show="filtered.length === 0">
+        {{ 'directives.items.notfound' | translate }}
+    </div>
+
+    <div class="alert alert-{{options.alert.type}}" ng-class="{'animation-short-shake': currentPage > lastPage && lastPage > 0}" ng-show="currentPage > lastPage && lastPage > 0">
+        {{ 'directives.items.page_no_items' | translate }}<a ui-sref="items({ page: lastPage })" ng-click="setPage(lastPage)" title="{{ 'common.page' | translate }} {{lastPage}}">{{ 'common.page' | translate }} {{lastPage}}</a>
+    </div>
+
+    <footer>
+        <pagination ng-hide="filtered.length === 0 || currentPage > lastPage" current-page="currentPage" pages="pages" last-page="lastPage" set-page="setPage"></pagination>
+    </footer>
+</section>
+
+<aside id="favorites" class="modal" tabindex="-1" role="dialog" ng-class="{'modal-status-open animation-fade-in': ShowFavorites}">
+    <favorite-items items="items" switch-favorite="switchFavorite" switch-favorites-list="switchFavoritesList" options="options"></favorite-items>
+</aside>

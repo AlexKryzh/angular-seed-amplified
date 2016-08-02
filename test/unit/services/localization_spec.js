@@ -1,35 +1,45 @@
-/*global angular */
+describe('LocalizationService', function() {
 
-'use strict';
+    var rootScope, LocalizationService;
 
-// describe('Unit: ExampleService', function() {
+    beforeEach(function() {
+        // instantiate the app module
+        angular.mock.module('app');
 
-//   var http, service;
+        // mock the service
+        angular.mock.inject(function(_$rootScope_, _LocalizationService_) {
+            rootScope = _$rootScope_;
+            LocalizationService = _LocalizationService_;
+        });
+    });
 
-//   beforeEach(function() {
-//     // instantiate the app module
-//     angular.mock.module('app');
+    it('should exist', function() {
+        expect(LocalizationService).toBeDefined();
+    });
 
-//     // mock the service
-//     angular.mock.inject(function($httpBackend, ExampleService) {
-//       http = $httpBackend;
-//       service = ExampleService;
-//     });
-//   });
+    it('should return specific options with set() method', function() {
+        expect(LocalizationService.set('en_us')).toEqual('en_us');
+    });
 
-//   it('should exist', function() {
-//     expect(service).toBeDefined();
-//   });
+    it('should return array with options by calling get() method', function() {
+        expect(JSON.stringify(LocalizationService.get().length)).toBeGreaterThan(0);
+    });
 
-//   it('should retrieve data', function(done) {
-//     http.expect('GET', 'apiPath').respond(201, {data: 1234});
+    it('should return specific options with getCurrent() method', function() {
+        expect(LocalizationService.getCurrent()).toEqual('en_us');
+    });
 
-//     service.get().then(function(result) {
-//       expect(result).toEqual({data: 1234});
-//     }, function(error) {
-//       expect(error).toBeUndefined();
-//     }).then(done);
+    it('should respond to the `$translateChangeSuccess` event', function() {
+        var data = {
+            language: 'es_es'
+        };
+        rootScope.$emit('$translateChangeSuccess', data);
+        expect(rootScope.translateChangeSuccess.language).toBe('es_es');
+    });
 
-//     http.flush();
-//   });
-// });
+    it('should respond to the `$localeChangeSuccess` event', function() {
+        rootScope.$emit('$localeChangeSuccess');
+        expect(rootScope.localeChangeSuccess).toBeTruthy();
+    });
+
+});

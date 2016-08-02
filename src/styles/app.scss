@@ -15,25 +15,57 @@ body {
     display: none !important;
 }
 
-sprite{
-    display: inline-block;
-    .sprite{
-        display: inline-block;
-        svg{
-            height: inherit;
-            width: inherit;
-        }
+.hide-overflow{
+    overflow: hidden;
+}
+
+.navbar-shadow{
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+
+.btn-favorite{
+    background-color: $gold;
+    border-color: $gold-dark;
+    .icon{
+        color: #fff;
     }
+    &:hover{
+        background-color: $gold-dark;
+        border-color: $gold-darker;
+    }
+}
+
+.modal-dialog{
+    height: calc(100% - 40px);
+    overflow-y: auto;
+    .modal-body {
+        min-height: 200px;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+}
+
+summary{
+    &:focus{
+        outline: none;
+    }
+}
+
+.modal-status-open{
+    display: block;
+    background-color: rgba(0,0,0,.8);
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+footer{
+    margin-bottom: 20px;
 }
 
 p {
     @include font-size(14px);
 }
-
-.polygons{
-    background: url('../images/polygon.jpg') 50% 50% no-repeat;
-    background-size: cover;
-    height: 300px;
-    width: 300px;
-}
-

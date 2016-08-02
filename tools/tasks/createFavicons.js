@@ -9,6 +9,10 @@ gulp.task('create:Favicons', function(cb) {
     masterPicture: config.favicons.src,
     dest: config.favicons.dest,
     iconsPath: config.favicons.path,
+    androidManifest: null,
+    browserConfig: null,
+    firefoxManifest: null,
+    yandexManifest: null,
     design: {
       ios: {
         pictureAspect: 'backgroundAndMargin',

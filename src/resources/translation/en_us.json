@@ -1,17 +1,61 @@
 {
-    "directives.language-select.Language": "Language",
+    "directives":{
+        "language-select":{
+            "Language": "Language"
+        },
+        "filter_options":{
+            "sorting":{
+                "default": "by default",
+                "title_asc": "title (ascending)",
+                "title_desc": "title (descending)",
+                "description_asc": "description (ascending)",
+                "description_desc": "description (descending)",
+                "email_asc": "email (ascending)",
+                "email_desc": "email (descending)",
+                "price_lowest": "lowest price",
+                "price_highest": "highest price"
+            }
+        },
+        "items":{
+            "filter": "search",
+            "filter_placeholder": "Search item...",
+            "sort": "sorting",
+            "loading": "Recieving Data...",
+            "empty": "There is no items in this list.",
+            "notfound": "There is no items found.",
+            "page_no_items": "This page don't have items, last page with items is: ",
+            "error": "Sorry, we cant get required information in this moment."
+        },
+        "item":{
+            "show_description": "Description"
+        }
+    },
     "header":{
         "menu":{
             "home": "Home",
-            "style-guide": "StyleGuide"
+            "items": "Items",
+            "style_guide": "StyleGuide"
         }
     },
     "page": {
         "home": {
-            "title": "Home"
+            "title": "Home",
+            "button": "Show Items"
+        },
+        "items": {
+            "title": "Items",
+            "favorite_items": "Favorite Items",
+            "favorite_add": "Add to Favorites",
+            "favorite_remove": "Remove from Favorites"
         },
         "styleguide": {
             "title": "Style Guide"
         }
+    },
+    "common": {
+        "close": "close",
+        "remove": "remove",
+        "page": "Page",
+        "of": "of"
     }
 }

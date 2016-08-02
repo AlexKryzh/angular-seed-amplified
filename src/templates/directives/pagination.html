@@ -1,0 +1,27 @@
+<nav>
+    <ul class="pagination">
+        <li>
+            <a ng-show="currentPage > 2" ng-click="setPage(1)" ui-sref="items({page: (1)})" ui-sref-opts="{notify: false}" title="{{ 'common.page' | translate }} {{1}}">
+                <span class="icon icon-first"></span>
+            </a>
+        </li>
+        <li>
+            <a ng-show="currentPage > 1" ng-click="setPage(currentPage - 1)" ui-sref="items({page: (currentPage - 1)})" ui-sref-opts="{notify: false}" title="{{ 'common.page' | translate }} {{currentPage - 1}}">
+                <span class="icon icon-previous"></span>
+            </a>
+        </li>
+        <li ng-repeat="page in pages" ng-class="{'active': page === currentPage}">
+            <a ng-click="setPage(page)" ui-sref="items({ page: page })" ui-sref-opts="{notify: false}" title="{{ 'common.page' | translate }} {{page}}" ng-bind="page"></a>
+        </li>
+        <li>
+            <a ng-show="currentPage < lastPage" ng-click="setPage(currentPage + 1)" ui-sref="items({page: (currentPage + 1)})" ui-sref-opts="{notify: false}" title="{{ 'common.page' | translate }} {{currentPage + 1}}">
+                <span class="icon icon-next"></span>
+            </a>
+        </li>
+        <li>
+            <a ng-show="currentPage < lastPage - 1" ng-click="setPage(lastPage)" ui-sref="items({page: (lastPage)})" ui-sref-opts="{notify: false}" title="{{ 'common.page' | translate }} {{lastPage}}">
+                <span class="icon icon-last"></span>
+            </a>
+        </li>
+    </ul>
+</nav>

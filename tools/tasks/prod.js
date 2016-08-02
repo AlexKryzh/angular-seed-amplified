@@ -32,7 +32,8 @@ gulp.task('prod', ['delete:Files'], function(cb) {
             'browserify:Modules',
             'browserify:Main',
             'copy:Locales',
-            'copy:Translations'
+            'copy:Translations',
+            'copy:Data'
         ],
         [
             'inject:CacheBust',

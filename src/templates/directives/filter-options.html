@@ -1,0 +1,21 @@
+<form ng-hide="items.length === 0" class="properties">
+    <div class="row labels">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <label for="searchProperties"><span class="icon icon-search"></span> {{ "directives.items.filter" | translate }}</label>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <label for="orderProperties"><span class="icon icon-sort"></span> {{ "directives.items.sort" | translate }}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <input type="search" id="searchProperties" class="form-control" ng-model="options.filter" ng-change="reloadItems()" placeholder="{{ 'directives.items.filter_placeholder' | translate }}">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+            <select id="orderProperties" class="form-control" ng-options="( 'directives.filter_options.sorting.' + sort.label | translate) for sort in options.sorts" ng-model="options.sort"></select>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-6">
+            <button class="btn btn-favorite" ng-click="switchFavoritesList()">{{ "page.items.favorite_items" | translate }}</button>
+        </div>
+    </div>
+</form>

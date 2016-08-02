@@ -1,4 +1,4 @@
-function LocalizationService($translate, AppSettings, $rootScope, tmhDynamicLocale, ToolkitService, $timeout, $filter, $state, $log) {
+function LocalizationService($translate, AppSettings, $rootScope, tmhDynamicLocale, $timeout, $filter, $state, $log) {
   'ngInject';
 
     var _LOCALIZATIONS = AppSettings.localizations;
@@ -9,25 +9,23 @@ function LocalizationService($translate, AppSettings, $rootScope, tmhDynamicLoca
     var currentLocalization = $translate.proposedLanguage(); // because of async loading
 
     var validateLocalizations = function (localization) {
-        // var params = {
-        //     values: _LOCALIZATIONS,
-        //     filter: {code: localization}
-        // };
-        // return ToolkitService.filter(params);
         return $filter('filter')(_LOCALIZATIONS, {code: localization}, true);
     };
 
     // EVENTS
     $rootScope.$on('$translateChangeSuccess', function (event, data) {
+        $rootScope.translateChangeSuccess = data;
         document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
         tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));// load Angular locale
     });
 
     $rootScope.$on('$localeChangeSuccess', function () {
+        $rootScope.localeChangeSuccess = true;
         $timeout(function(){
             $rootScope.hideLoading = true;
+            $rootScope.$emit('$switchLoading', {status: true});
             $rootScope.pageTitle = $translate.instant($state.current.title);
-        }, 1000);
+        }, 200);
     });
 
     return {
@@ -39,7 +37,7 @@ function LocalizationService($translate, AppSettings, $rootScope, tmhDynamicLoca
             }
 
             if(currentLocalization !== localization){
-                $rootScope.hideLoading = false;
+                $rootScope.$emit('$switchLoading', {status: false});
                 currentLocalization = localization;
                 $translate.use(localization);
             }
