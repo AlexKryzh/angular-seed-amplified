@@ -11,7 +11,7 @@ setEnvironment();
 
 gulp.task('copy:MainIndex', function() {
     return gulp.src(config.templates.index)
-        .pipe( production(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.favicons.data)).favicon.html_code)))
+        //.pipe( production(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.favicons.data)).favicon.html_code)))
         .pipe( htmlhint('.htmlhintrc') )
         .pipe( htmlhint.reporter() )
         .pipe( production(global.cachebust.references()) )
