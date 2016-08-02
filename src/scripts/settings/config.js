@@ -13,7 +13,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $logPro
         resolve: {
             list_deps: function($ocLazyLoad){
                 return $ocLazyLoad.load({
-                    files: ['/js/home.js']
+                    files: ['/scripts/home.js']
                 });
             }
         }
@@ -27,7 +27,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $logPro
         resolve: {
             list_deps: function($ocLazyLoad){
                 return $ocLazyLoad.load({
-                    files: ['/js/styleguide.js']
+                    files: ['/scripts/styleguide.js']
                 });
             }
         }
