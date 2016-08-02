@@ -17,12 +17,12 @@ export default {
         development: {
             development: true,
             mocks: false,
-            apiUrl: '/api/v1'
+            apiUrl: '/resources/data/'
         },
         production: {
             development: false,
             mocks: false,
-            apiUrl: '/api/v2'
+            apiUrl: '/resources/data/'
         }
     },
 
@@ -44,6 +44,7 @@ export default {
 
     favicons: {
         src: 'src/images/favicon/favicon.svg',
+        dev: 'src/images/favicon/favicon.ico',
         dest: 'dist/images/favicons/',
         path: '/images/favicons/',
         data: 'faviconData.json'
@@ -67,6 +68,11 @@ export default {
     translation: {
         src: 'src/resources/translation/*.json',
         dest: 'dist/resources/translation'
+    },
+
+    data: {
+        src: 'src/resources/data/*.json',
+        dest: 'dist/resources/data'
     },
 
     mocks: {
@@ -115,6 +121,7 @@ export default {
         'png',
         'jpe?g',
         'gif',
+        'ico',
         'svg',
         'eot',
         'otf',

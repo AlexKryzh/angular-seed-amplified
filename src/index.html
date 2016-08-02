@@ -9,10 +9,10 @@
         <meta name="theme-color" content="#000000">
         <meta name="msapplication-navbutton-color" content="#000000">
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
-        <link rel="shortcut icon" href="/images/favicons/favicon.svg">
+        <link rel="shortcut icon" href="/images/favicons/favicon.ico">
         <link rel="stylesheet" href="styles/app.css">
 </head>
-    <body ng-attr-id="{{'page-' + page.state.name}}" ng-cloak="">
+    <body ng-attr-id="{{'page-' + page.state.name}}" ng-cloak="" ng-class="{'hide-overflow' : hidePageScroll}">
         <app-loading ng-hide="hideLoading"></app-loading>
         <header>
             <div ng-include="'partials/header.html'"></div>

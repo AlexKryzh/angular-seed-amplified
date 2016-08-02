@@ -1,0 +1,43 @@
+<div class="modal-dialog modal-md" role="document" ng-click="switchFavoritesList()">
+    <div class="modal-content" ng-click="$event.stopPropagation()">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="switchFavoritesList()" title="{{ 'common.close' | translate }}"><span class="icon icon-close"></span></button>
+            <h3 class="modal-title">{{ "page.items.favorite_items" | translate }}</h3>
+        </div>
+        <div class="modal-body">
+            <form ng-hide="items.length === 0" class="properties">
+                <div class="row labels">
+                    <div class="col-xs-12">
+                        <label for="searchFavorites"><span class="icon icon-search"></span> {{ "directives.items.filter" | translate }}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input type="search" id="searchFavorites" class="form-control" ng-model="favoritesList.filter">
+                    </div>
+                </div>
+            </form>
+            <ul ng-hide=" favorites.length === 0" class="favorites" itemscope itemtype="http://schema.org/ItemList">
+                <li class="row" ng-repeat="item in favorites = (items | filter:{favorite: true} | filter:{title: favoritesList.filter} | orderBy:options.sort.expression:options.sort.reverse)">
+                    <span class="col-xs-2 vcenter">
+                        <button class="btn btn-link" ng-click="switchFavorite(item)" title="{{ 'common.remove' | translate }}">
+                            <span class="icon icon-remove"></span>
+                        </button>
+                    </span>
+                    <span class="col-xs-3 vcenter">
+                        <img class="image thumbnail" itemprop="image" ng-src="{{::item.image}}" alt="{{::item.title}}" default-image="/images/default.png" />
+                    </span>
+                    <span class="col-xs-6 vcenter">
+                        {{::item.title}}
+                    </span>
+                </li>
+            </ul>
+            <div class="alert alert-info" ng-class="{'animation-short-shake': favorites.length === 0}"  ng-show="favorites.length === 0">
+                {{ 'directives.items.notfound' | translate }}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-lg" ng-click="switchFavoritesList()">{{ "common.close" | translate }}</button>
+        </div>
+    </div>
+</div>

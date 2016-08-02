@@ -19,6 +19,21 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $logPro
         }
     })
 
+    .state('items', {
+        url: '/items?page',
+        params: { page: '1', squash: true },
+        title: 'page.items.title',
+        controller: 'ItemsCtrl as items',
+        templateUrl: 'items.html',
+        resolve: {
+            list_deps: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                    files: ['/scripts/items.js']
+                });
+            }
+        }
+    })
+
     .state('styleguide', {
         url: '/styleguide',
         title: 'page.styleguide.title',

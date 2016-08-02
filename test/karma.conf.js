@@ -43,7 +43,10 @@ const karmaBaseConfig = {
     },
 
     proxies: {
-        '/': 'http://localhost:9876/'
+        '/': 'http://localhost:9876/',
+        '/scripts/' : 'src/scripts/',
+        '/__karma__/resources/' : 'src/resources/',
+        '/__karma__/images/' : 'src/images/'
     },
 
     urlRoot: '/__karma__/',
