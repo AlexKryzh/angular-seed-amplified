@@ -1,5 +1,3 @@
-import config                      from '../config';
-import gulp                         from 'gulp';
 import browserSync           from 'browser-sync';
 import setEnvironment       from '../util/setEnvironment';
 import rename                   from 'gulp-rename';
@@ -8,7 +6,7 @@ import jsonminify               from 'gulp-jsonminify';
 
 setEnvironment();
 
-gulp.task('copy:Translations', function() {
+gulp.task('copy:Translations', 'Description', function() {
 
     var constants = config.constants;
 

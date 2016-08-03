@@ -1,8 +1,6 @@
-import config               from '../config';
 import url                     from 'url';
-import gulp                  from 'gulp';
 
-gulp.task('server', function() {
+gulp.task('server', 'Description', function() {
 
     const DEFAULT_FILE = 'index.html';
     const ASSET_EXTENSION_REGEX = new RegExp(`\\b(?!\\?)\\.(${config.assetExtensions.join('|')})\\b(?!\\.)`, 'i');

@@ -1,5 +1,3 @@
-import config                      from '../config';
-import gulp                         from 'gulp';
 import browserSync           from 'browser-sync';
 import setEnvironment       from '../util/setEnvironment';
 import rename                   from 'gulp-rename';
@@ -9,7 +7,7 @@ import uglify                      from 'gulp-uglify';
 setEnvironment();
 
 // Views task
-gulp.task('copy:Locales', function() {
+gulp.task('copy:Locales', 'Description', function() {
 
     var constants = config.constants;
 

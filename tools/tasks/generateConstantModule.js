@@ -1,5 +1,3 @@
-import config                       from '../config';
-import gulp                          from 'gulp';
 import ngConstant              from 'gulp-ng-constant';
 import setEnvironment       from '../util/setEnvironment';
 import rename                    from 'gulp-rename';
@@ -8,7 +6,7 @@ import replace                    from 'gulp-replace';
 
 setEnvironment();
 
-gulp.task('generate:ConstantModule', function() {
+gulp.task('generate:ConstantModule', 'Description', function() {
 
     if(production()){
         var environment = 'production';

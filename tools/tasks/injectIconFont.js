@@ -1,11 +1,9 @@
-import config              from '../config';
 import changed          from 'gulp-changed';
-import gulp                 from 'gulp';
 import rename            from 'gulp-rename';
 import browserSync   from 'browser-sync';
 import inlineFonts      from 'gulp-inline-fonts';
 
-gulp.task('inject:IconFont', function() {
+gulp.task('inject:IconFont', 'Description', function() {
     return gulp.src(config.fonts.icons)
         .pipe(inlineFonts({
           name: 'icons',

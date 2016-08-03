@@ -1,8 +1,7 @@
-import gulp                           from 'gulp';
 import runSequence             from 'run-sequence';
 import environments            from 'gulp-environments';
 
-gulp.task('dev', ['delete:Files'], function(cb) {
+gulp.task('dev', 'Description', ['delete:Files'], function(cb) {
 
     cb = cb || function() {};
 

@@ -1,11 +1,8 @@
-import config               from '../config';
-import gulp                 from 'gulp';
 import browserSync          from 'browser-sync';
-import gulpif               from 'gulp-if';
-import jsonlint             from 'gulp-jsonlint';
+import gulpif                      from 'gulp-if';
+import jsonlint                   from 'gulp-jsonlint';
 
-// Views task
-gulp.task('copy:Mocks', function() {
+gulp.task('copy:Mocks', 'Description', function() {
 
     return gulp.src(config.mocks.src)
         .pipe(jsonlint())

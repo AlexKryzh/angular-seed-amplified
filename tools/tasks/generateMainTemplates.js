@@ -1,5 +1,3 @@
-import config                   from '../config';
-import gulp                      from 'gulp';
 import browserSync        from 'browser-sync';
 import templateCache    from 'gulp-angular-templatecache';
 import folders                  from 'gulp-folders';
@@ -7,7 +5,7 @@ import htmlhint                from 'gulp-htmlhint';
 import htmlmin                from 'gulp-htmlmin';
 
 // Views task
-gulp.task('generate:MainTemplates', function() {
+gulp.task('generate:MainTemplates', 'Description', function() {
 
     // Process any other view files from app/views
     return gulp.src(config.templates.src)

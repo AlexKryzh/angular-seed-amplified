@@ -1,9 +1,7 @@
-import config           from '../config';
-import gulp              from 'gulp';
 import plato             from 'gulp-plato';
 import babel            from 'gulp-babel';
 
-gulp.task('analyze:Plato', function() {
+gulp.task('analyze:Plato', 'Description', function() {
 
     return gulp.src(
             config.babel.src

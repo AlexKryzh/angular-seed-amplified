@@ -1,14 +1,12 @@
-import config              from '../config';
 import changed          from 'gulp-changed';
 import rename           from 'gulp-rename';
-import gulp                 from 'gulp';
 import iconfont           from 'gulp-iconfont';
 import consolidate     from 'gulp-consolidate';
 import browserSync   from 'browser-sync';
 
 var runTimestamp = Math.round(Date.now()/1000);
 
-gulp.task('generate:IconFont', function() {
+gulp.task('generate:IconFont', 'Description', function() {
     return gulp.src(config.iconsfont.src)
         .pipe( changed(config.iconsfont.dest) ) // Ignore unchanged files
         .pipe(iconfont({

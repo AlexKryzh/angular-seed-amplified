@@ -1,5 +1,3 @@
-import config                     from '../config';
-import gulp                        from 'gulp';
 import gulpif                      from 'gulp-if';
 import gutil                        from 'gulp-util';
 import source                    from 'vinyl-source-stream';
@@ -74,10 +72,10 @@ function buildScript(file) {
 
 }
 
-gulp.task('browserify:Modules', folders(config.modules.src, function(module){
+gulp.task('browserify:Modules', 'Description', folders(config.modules.src, function(module){
     return buildScript(module + '.js');
 }));
 
-gulp.task('browserify:Main', function() {
+gulp.task('browserify:Main', 'Description', function() {
     return buildScript('app.js');
 });

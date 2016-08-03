@@ -1,5 +1,3 @@
-import config                      from '../config';
-import gulp                        from 'gulp';
 import gulpif                       from 'gulp-if';
 import sourcemaps             from 'gulp-sourcemaps';
 import sass                         from 'gulp-sass';
@@ -22,7 +20,7 @@ var sass_settings =  {
     includePaths: config.styles.sassIncludePaths
 };
 
-gulp.task('generate:ModuleStyles', folders(config.modules.src, function(module){
+gulp.task('generate:ModuleStyles', 'Description', folders(config.modules.src, function(module){
 
     const createSourcemap = development() || config.styles.prodSourcemap;
 
