@@ -1,6 +1,3 @@
-const istanbul = require('browserify-istanbul');
-const isparta  = require('isparta');
-
 const karmaBaseConfig = {
 
     basePath: '../',
@@ -28,17 +25,21 @@ const karmaBaseConfig = {
     autoWatch: true,
 
     browserify: {
-        debug: false,
+        debug: true,
         extensions: ['.js'],
         transform: [
             'babelify',
             'browserify-ngannotate',
             'bulkify',
-            istanbul({
-                instrumenter: isparta,
-                instrumenterConfig: { embedSource: true },
+            ['browserify-istanbul', 
+             {
+                instrumenter: require('isparta'),
+                instrumenterConfig: {
+                    embedSource: true
+                },
                 ignore: ['**/node_modules/**', '**/test/**', '**/src/scripts/mocks/**/*.js', '**/*_spec.js', '**/*_tpl.js', '**/*_css.js', '**/index.js', '**/src/scripts/settings/mocks.js']
-            })
+             }
+            ]
         ]
     },
 
@@ -53,8 +54,6 @@ const karmaBaseConfig = {
 
     files: [
         { pattern: 'src/@(scripts|modules)/**/!(*tpl|*css|index).js', included: true },
-        // { pattern: 'src/images/**/*', watched: false, included: false, served: true },
-        // { pattern: 'src/resources/**/*', watched: false, included: false, served: true },
 
         // third part resources
         { pattern: 'node_modules/angular-mocks/angular-mocks.js', watched: false },
