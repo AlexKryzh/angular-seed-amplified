@@ -14,7 +14,7 @@ gulp.task('generate:IconFont', function() {
         .pipe(iconfont({
             fontName: config.iconsfont.name,
             normalize: true,
-            appendUnicode: true, // recommended option
+            prependUnicode: true, // recommended option
             formats: ['woff'], // default, 'woff2' and 'svg' are available
             timestamp: runTimestamp, // recommended to get consistent builds when watching files
         }))
