@@ -12,8 +12,8 @@ describe('DefaultImageDrct', function() {
             httpBackend = _$httpBackend_;
             httpBackend.whenGET('resources/translation/en_us.json').respond(200, {});
             httpBackend.whenGET('resources/translation/es_es.json').respond(200, {});
-            httpBackend.whenGET('images/default.png').respond(200, {});
-            element = angular.element('<img src="" default-image="images/default.png" />');
+            httpBackend.whenGET('images/default.svg').respond(200, {});
+            element = angular.element('<img src="" default-image="images/default.svg" />');
             compile(element)(scope);
             scope.$digest();
             isolateScope = element.isolateScope();

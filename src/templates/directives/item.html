@@ -1,5 +1,5 @@
 <article class="item" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-     <img class="image thumbnail" itemprop="image" ng-src="{{::data.image}}" alt="{{::data.title}}" default-image="/images/default.png" />
+     <img class="image thumbnail" itemprop="image" ng-src="{{::data.image}}" alt="{{::data.title}}" default-image="/images/default.svg" />
     <h1>
         <button class="btn btn-md" ng-class="{'btn-favorite animation-rubber': data.favorite === true, 'btn-default': data.favorite !== true}" ng-click="switchFavorite(data)" title="{{ data.favorite ? 'page.items.favorite_remove' : 'page.items.favorite_add' | translate }}"><span class="icon icon-star"></span></button> 
         <span itemprop="name">{{::data.title}}</span>

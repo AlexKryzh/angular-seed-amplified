@@ -1,11 +1,5 @@
-function OnRun($rootScope, $translate, AppSettings, $log) {
+function OnRun($rootScope, $translate, $log) {
     'ngInject';
-
-    //app settings
-    $rootScope.AppSettings = AppSettings;
-
-    //Print AppSettings in console
-    $log.debug('AppSettings: ', AppSettings);
 
     //Switch body scroll
     $rootScope.$on('$switchPageScroll', (event, args) => {

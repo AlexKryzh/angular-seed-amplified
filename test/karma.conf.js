@@ -28,7 +28,7 @@ const karmaBaseConfig = {
     autoWatch: true,
 
     browserify: {
-        debug: true,
+        debug: false,
         extensions: ['.js'],
         transform: [
             'babelify',
@@ -42,20 +42,21 @@ const karmaBaseConfig = {
         ]
     },
 
+    // web server port
+    port: 9876,
+
     proxies: {
-        '/': 'http://localhost:9876/',
-        '/scripts/' : 'src/scripts/',
-        '/__karma__/resources/' : 'src/resources/',
-        '/__karma__/images/' : 'src/images/'
+        '/': 'http://localhost:9876/'
     },
 
     urlRoot: '/__karma__/',
 
     files: [
-        // app-specific code
         { pattern: 'src/@(scripts|modules)/**/!(*tpl|*css|index).js', included: true },
+        // { pattern: 'src/images/**/*', watched: false, included: false, served: true },
+        // { pattern: 'src/resources/**/*', watched: false, included: false, served: true },
 
-        // 3rd-party resources
+        // third part resources
         { pattern: 'node_modules/angular-mocks/angular-mocks.js', watched: false },
 
         // test files
@@ -84,6 +85,7 @@ const ciAdditions = {
 };
 
 module.exports = function(config) {
-  const isCI = process.env.CI && Boolean(process.env.TRAVIS_PULL_REQUEST);
-  config.set(isCI ? Object.assign(karmaBaseConfig, ciAdditions) : karmaBaseConfig);
+    karmaBaseConfig.logLevel = config.LOG_ERROR;
+    const isCI = process.env.CI && Boolean(process.env.TRAVIS_PULL_REQUEST);
+    config.set(isCI ? Object.assign(karmaBaseConfig, ciAdditions) : karmaBaseConfig);
 };

@@ -14,10 +14,6 @@ describe('Settings Run', function() {
         $rootScope.$broadcast('$routeChangeSuccess');
     });
 
-    it('should have AppSettings defined', function() {
-        expect($rootScope.AppSettings).toBeDefined();
-    });
-
     it('should have switchNav method defined', function() {
         expect(angular.isFunction($rootScope.switchNav)).toBe(true);
     });
