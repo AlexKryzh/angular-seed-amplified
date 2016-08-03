@@ -1,5 +1,3 @@
-import config                     from '../config';
-import gulp                        from 'gulp';
 import browserSync           from 'browser-sync';
 import htmlhint                   from 'gulp-htmlhint';
 import htmlmin                   from 'gulp-htmlmin';
@@ -9,7 +7,7 @@ import fs                             from 'fs';
 
 setEnvironment();
 
-gulp.task('copy:MainIndex', function() {
+gulp.task('copy:MainIndex', 'Description', function() {
     return gulp.src(config.templates.index)
         //.pipe( production(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(config.favicons.data)).favicon.html_code)))
         .pipe( htmlhint('.htmlhintrc') )

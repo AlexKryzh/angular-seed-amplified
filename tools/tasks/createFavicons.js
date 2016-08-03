@@ -1,10 +1,8 @@
-import config                   from '../config';
-import gulp                      from 'gulp';
 import realFavicon          from 'gulp-real-favicon';
 
 var runTimestamp = Math.round(Date.now()/1000);
 
-gulp.task('create:Favicons', function(cb) {
+gulp.task('create:Favicons', 'Description', function(cb) {
   realFavicon.generateFavicon({
     masterPicture: config.favicons.src,
     dest: config.favicons.dest,

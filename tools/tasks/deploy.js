@@ -1,5 +1,3 @@
-import gulp from 'gulp';
-
-gulp.task('deploy', ['prod'], function() {
+gulp.task('deploy', 'Description', ['prod'], function() {
     console.log('Any deployment logic should go here');
 });
