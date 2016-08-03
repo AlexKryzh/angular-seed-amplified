@@ -12,7 +12,7 @@ gulp.task('update:Webdriver', webdriver_update);
 
 gulp.task('launch:Webdriver', ['update:Webdriver'], webdriver);
 
-gulp.task('test:Functional', ['launch:Webdriver'], function(cb) {
+gulp.task('test:E2E', ['launch:Webdriver'], function(cb) {
 
     const testFiles = gulp.src('test/e2e/**/*_spec.js');
 
