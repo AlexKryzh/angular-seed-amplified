@@ -33,6 +33,9 @@ function OnRun($rootScope, $translate, AppSettings, $log) {
             }
         };
 
+        //hide menu
+        $rootScope.switchNav(false);
+
         if(toState.title){
             $rootScope.pageTitle = $translate.instant(toState.title);
             //$rootScope.pageTitle += ' \u2014 ';

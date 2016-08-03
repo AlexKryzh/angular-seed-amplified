@@ -8,9 +8,9 @@ import {
     webdriver
 } from 'gulp-protractor';
 
-//gulp.task('update:Webdriver', webdriver_update);
+gulp.task('update:Webdriver', webdriver_update);
 
-gulp.task('launch:Webdriver', webdriver);
+gulp.task('launch:Webdriver', ['update:Webdriver'], webdriver);
 
 gulp.task('test:Functional', ['launch:Webdriver'], function(cb) {
 
