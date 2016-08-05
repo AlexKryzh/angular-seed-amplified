@@ -1,6 +1,6 @@
-import runSequence     from 'run-sequence';
+import runSequence from 'run-sequence';
 
-gulp.task('mocks', 'Description', function(cb) {
+gulp.task('mocks', 'Activate mocks', function(cb) {
 
     global.mocks = true;
 

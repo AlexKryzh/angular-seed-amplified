@@ -1,9 +1,8 @@
-import changed                  from 'gulp-changed';
-import browserSync           from 'browser-sync';
+import changed from 'gulp-changed';
 
-gulp.task('copy:Favicon', 'Description', function() {
+gulp.task('copy:Favicon', 'Copy simple favicon just for dev environment', function() {
   return gulp.src(config.favicons.dev)
-    .pipe( changed(config.favicons.dest) )
-    .pipe( gulp.dest(config.favicons.dest) )
-    .pipe( browserSync.stream() );
+    .pipe(changed(config.favicons.dest))
+    .pipe(gulp.dest(config.favicons.dest));
+    //.pipe( browserSync.stream() );
 });

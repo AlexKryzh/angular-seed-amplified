@@ -1,25 +1,18 @@
-import gulpif                      from 'gulp-if';
-import gutil                        from 'gulp-util';
-import source                    from 'vinyl-source-stream';
-import sourcemaps           from 'gulp-sourcemaps';
-import buffer                     from 'vinyl-buffer';
-import streamify                from 'gulp-streamify';
-import watchify                  from 'watchify';
-import browserify               from 'browserify';
-import babelify                   from 'babelify';
-import uglify                       from 'gulp-uglify';
-import handleErrors           from '../util/handleErrors';
-import setEnvironment       from '../util/setEnvironment';
-import browserSync           from 'browser-sync';
-import ngAnnotate             from 'browserify-ngannotate';
-import rename                   from 'gulp-rename';
-import folders                    from 'gulp-folders';
-
-
-setEnvironment();
+import source from 'vinyl-source-stream';
+import sourcemaps from 'gulp-sourcemaps';
+import buffer from 'vinyl-buffer';
+import streamify from 'gulp-streamify';
+import watchify from 'watchify';
+import browserify from 'browserify';
+import babelify from 'babelify';
+import uglify from 'gulp-uglify';
+import handleErrors from '../util/handleErrors';
+import ngAnnotate from 'browserify-ngannotate';
+import rename from 'gulp-rename';
+import folders from 'gulp-folders';
 
 function createSourcemap() {
-    return development() || config.browserify.prodSourcemap;
+    return !prod || config.browserify.prodSourcemap;
 }
 
 function buildScript(file) {
@@ -28,14 +21,14 @@ function buildScript(file) {
         debug: createSourcemap(),
         cache: {},
         packageCache: {},
-        fullPaths: development()
+        fullPaths: !prod
     });
 
-    if (development()) {
+    if (!prod) {
         bundler = watchify(bundler);
         bundler.on('update', function() {
             rebundle();
-            gutil.log('Rebundle...');
+            util.log('Rebundle...');
         });
     }
 
@@ -52,18 +45,18 @@ function buildScript(file) {
 
     function rebundle() {
         const stream = bundler.bundle();
-        const sourceMapLocation = production() ? './' : '';
+        const sourceMapLocation = prod ? './' : '';
 
         return stream.on('error', handleErrors)
             .pipe( source(file) )
             .pipe( gulpif(createSourcemap(), buffer()) )
             .pipe( gulpif(createSourcemap(), sourcemaps.init({ loadMaps: true })) )
-            .pipe( production(streamify(uglify({
+            .pipe(gulpif(prod, streamify(uglify({
                 compress: { drop_console: true }
-            }))) )
+            }))))
             .pipe( gulpif(createSourcemap(), sourcemaps.write(sourceMapLocation)) )
             .pipe( rename({dirname: ''}) )
-            .pipe( production(global.cachebust.resources()) )
+            .pipe(gulpif(prod, cachebust.resources()))
             .pipe( gulp.dest(config.scripts.dest) )
             .pipe( browserSync.stream() );
     }
@@ -72,10 +65,10 @@ function buildScript(file) {
 
 }
 
-gulp.task('browserify:Modules', 'Description', folders(config.modules.src, function(module){
+gulp.task('browserify:Modules', 'Browserify modules', folders(config.modules.src, function(module){
     return buildScript(module + '.js');
 }));
 
-gulp.task('browserify:Main', 'Description', function() {
+gulp.task('browserify:Main', 'Browserify main app file', function() {
     return buildScript('app.js');
 });

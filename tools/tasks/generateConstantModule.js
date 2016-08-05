@@ -1,21 +1,17 @@
-import ngConstant              from 'gulp-ng-constant';
-import setEnvironment       from '../util/setEnvironment';
-import rename                    from 'gulp-rename';
-import gulpif                       from 'gulp-if';
-import replace                    from 'gulp-replace';
+import ngConstant from 'gulp-ng-constant';
+import rename from 'gulp-rename';
+import replace from 'gulp-replace';
 
-setEnvironment();
+gulp.task('generate:ConstantModule', 'Create constants module', function() {
 
-gulp.task('generate:ConstantModule', 'Description', function() {
-
-    if(production()){
+    if(prod){
         var environment = 'production';
     }else{
         var environment = 'development';
     }
 
     var constants = config.constants;
-    if(production()){
+    if(prod){
         constants.cache_buster = Math.random().toString(16).slice(2);
     }
 

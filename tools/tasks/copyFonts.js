@@ -1,11 +1,9 @@
-import changed          from 'gulp-changed';
-import browserSync   from 'browser-sync';
+import changed from 'gulp-changed';
 
-gulp.task('copy:Fonts', 'Description', function() {
-
-    return gulp.src( config.fonts.src )
-        .pipe( changed(config.fonts.dest) ) // Ignore unchanged files
-        .pipe( production(global.cachebust.resources()) )
-        .pipe( gulp.dest(config.fonts.dest) )
-        .pipe( browserSync.stream() );
+gulp.task('copy:Fonts', 'Copy fonts to dist folder', function() {
+    return gulp.src(config.fonts.src)
+        .pipe(changed(config.fonts.dest))
+        .pipe(gulpif(prod, cachebust.resources()))
+        .pipe(gulp.dest(config.fonts.dest))
+        //.pipe(browserSync.stream());
 });

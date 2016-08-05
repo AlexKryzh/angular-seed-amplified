@@ -1,17 +1,13 @@
-import changed                  from 'gulp-changed';
-import setEnvironment       from '../util/setEnvironment';
-import imagemin                from 'gulp-imagemin';
-import browserSync           from 'browser-sync';
+import changed from 'gulp-changed';
+import imagemin from 'gulp-imagemin';
 
-setEnvironment();
-
-gulp.task('copy:Images', 'Description', function() {
+gulp.task('copy:Images', 'Copy images to dist folder', function() {
 
   return gulp.src(config.images.src)
     .pipe( changed(config.images.dest) ) // Ignore unchanged files
-    .pipe( production(imagemin()) )
-    .pipe( production(global.cachebust.resources()) )
-    .pipe( gulp.dest(config.images.dest) )
-    .pipe( browserSync.stream() );
+    .pipe(gulpif(prod, imagemin()))
+    .pipe(gulpif(prod, cachebust.resources()))
+    .pipe(gulp.dest(config.images.dest));
+    //.pipe( browserSync.stream() );
 
 });

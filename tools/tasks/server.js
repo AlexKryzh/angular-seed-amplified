@@ -1,6 +1,6 @@
-import url                     from 'url';
+import url from 'url';
 
-gulp.task('server', 'Description', function() {
+gulp.task('server', 'Launch BrowserSync server for development', function() {
 
     const DEFAULT_FILE = 'index.html';
     const ASSET_EXTENSION_REGEX = new RegExp(`\\b(?!\\?)\\.(${config.assetExtensions.join('|')})\\b(?!\\.)`, 'i');

@@ -1,6 +1,6 @@
-import gzip              from 'gulp-gzip';
+import gzip from 'gulp-gzip';
 
-gulp.task('compress:File', 'Description', function() {
+gulp.task('compress:File', 'Compress files with gzip', function() {
 
   // desactivate gzip options
   // return gulp.src(config.gzip.src)

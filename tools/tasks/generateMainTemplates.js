@@ -1,17 +1,13 @@
-import browserSync        from 'browser-sync';
-import templateCache    from 'gulp-angular-templatecache';
-import folders                  from 'gulp-folders';
-import htmlhint                from 'gulp-htmlhint';
-import htmlmin                from 'gulp-htmlmin';
+import templateCache from 'gulp-angular-templatecache';
+import folders from 'gulp-folders';
+import htmlhint from 'gulp-htmlhint';
+import htmlmin from 'gulp-htmlmin';
 
-// Views task
-gulp.task('generate:MainTemplates', 'Description', function() {
-
-    // Process any other view files from app/views
+gulp.task('generate:MainTemplates', 'Create main templates module', function() {
     return gulp.src(config.templates.src)
         .pipe(htmlhint('.htmlhintrc'))
         .pipe(htmlhint.reporter())
-        .pipe( production(htmlmin({collapseWhitespace: true})) )
+        .pipe(gulpif(prod, htmlmin({collapseWhitespace: true})))
         .pipe(templateCache({
             standalone: true,
             filename: 'app_tpl.js',
@@ -19,5 +15,5 @@ gulp.task('generate:MainTemplates', 'Description', function() {
             moduleSystem: 'Browserify'
         }))
         .pipe(gulp.dest(config.templates.dest))
-        .pipe(browserSync.stream());
+        //.pipe(browserSync.stream());
 });
