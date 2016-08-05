@@ -1,24 +1,17 @@
-import browserSync           from 'browser-sync';
-import setEnvironment       from '../util/setEnvironment';
-import rename                   from 'gulp-rename';
-import streamify                from 'gulp-streamify';
-import uglify                      from 'gulp-uglify';
+import rename from 'gulp-rename';
+import streamify from 'gulp-streamify';
+import uglify from 'gulp-uglify';
 
-setEnvironment();
-
-// Views task
-gulp.task('copy:Locales', 'Description', function() {
+gulp.task('copy:Locales', 'Copy location format files', function() {
 
     var constants = config.constants;
 
     return gulp.src(config.locale.src)
-        .pipe( production(streamify(uglify({
-            compress: { drop_console: true }
-        }))) )
-        .pipe( production(rename(function (path) {
+        .pipe(gulpif(prod, streamify(uglify({compress: { drop_console: true }}))))
+        .pipe(gulpif(prod, rename(function (path) {
             path.basename += '.' + constants.cache_buster;
-            path.extname = '.js'
-        })) )
-        .pipe( gulp.dest(config.locale.dest) )
-        .pipe( browserSync.stream() );
+            path.extname = '.js';
+        })))
+        .pipe(gulp.dest(config.locale.dest));
+        //.pipe( browserSync.stream() );
 });

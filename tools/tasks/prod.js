@@ -1,19 +1,15 @@
 import runSequence            from 'run-sequence';
-import evironments              from 'gulp-environments';
 
-gulp.task('prod', 'Description', ['delete:Files'], function(cb) {
+gulp.task('prod', '*** Create production distribution folder', ['delete:Files'], function(cb) {
 
     cb = cb || function() {};
 
-    global.production = environments.production;
-    global.development = environments.development;
-
-    environments.current(production);
+    global.prod = true;
 
     runSequence(
         [
             'generate:IconFont',
-            'generate:Favicons'
+            'create:Favicons'
         ],
         [
             'copy:Images',

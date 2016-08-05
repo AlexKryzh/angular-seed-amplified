@@ -1,7 +1,7 @@
 import open             from 'gulp-open';
 import del                from 'del';
 
-gulp.task('open:SourceAnalyze', 'Description', function() {
+gulp.task('open:SourceAnalyze', 'Open in browser source analyze report', function() {
 
     del(config.babel.dest);
 

@@ -1,4 +1,4 @@
-gulp.task('watch:Files', 'Description', ['server'], function() {
+gulp.task('watch:Files', 'Watch files changes and reload BrowserSync', ['server'], function() {
 
     global.isWatching = true;
 
@@ -17,6 +17,6 @@ gulp.task('watch:Files', 'Description', ['server'], function() {
     gulp.watch(config.templates.watch, ['generate:MainTemplates']);
     gulp.watch(config.modules.templates, ['generate:ModuleTemplates']);
 
-    gulp.watch([config.destFiles]).on('change', global.browserSync.reload);
+    gulp.watch([config.destFiles]).on('change', browserSync.reload);
 
 });

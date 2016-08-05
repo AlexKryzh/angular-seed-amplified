@@ -1,7 +1,9 @@
-import plato             from 'gulp-plato';
-import babel            from 'gulp-babel';
+import plato from 'gulp-plato';
+import babel from 'gulp-babel';
 
-gulp.task('analyze:Plato', 'Description', function() {
+//REPLACE gulp-plato(deprecated) with plato
+
+gulp.task('analyze:Plato', 'JavaScript source code visualization, static analysis, and complexity', function() {
 
     return gulp.src(
             config.babel.src

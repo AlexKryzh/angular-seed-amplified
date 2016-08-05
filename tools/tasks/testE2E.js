@@ -1,16 +1,16 @@
-import testServer    from '../util/testServer';
-import express        from 'express';
+import testServer from '../util/testServer';
+import express from 'express';
 import {
     protractor,
     webdriver_update,
     webdriver
 } from 'gulp-protractor';
 
-gulp.task('update:Webdriver', 'Description', webdriver_update);
+gulp.task('update:Webdriver', 'Update Webdriver for functional test', webdriver_update);
 
-gulp.task('launch:Webdriver', 'Description', ['update:Webdriver'], webdriver);
+gulp.task('launch:Webdriver', 'Launch Webdriver for functional test', ['update:Webdriver'], webdriver);
 
-gulp.task('test:E2E', 'Description', ['launch:Webdriver'], function(cb) {
+gulp.task('test:E2E', 'Launch functional test', ['launch:Webdriver'], function(cb) {
 
     const testFiles = gulp.src('test/e2e/**/*_spec.js');
 

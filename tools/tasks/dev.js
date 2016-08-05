@@ -1,14 +1,10 @@
-import runSequence             from 'run-sequence';
-import environments            from 'gulp-environments';
+import runSequence from 'run-sequence';
 
-gulp.task('dev', 'Description', ['delete:Files'], function(cb) {
+gulp.task('dev', '*** Create development distribution', ['delete:Files'], function(cb) {
 
     cb = cb || function() {};
 
-    global.production = environments.production;
-    global.development = environments.development;
-
-    environments.current(development);
+    global.prod = false;
 
     runSequence(
         [
