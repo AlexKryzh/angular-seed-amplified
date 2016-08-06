@@ -1,6 +1,6 @@
 import runSequence from 'run-sequence';
 
-gulp.task('dev', '*** Create development distribution', ['delete:Files'], function(cb) {
+gulp.task('dev', 'Create development distribution', ['delete:Files'], function(cb) {
 
     cb = cb || function() {};
 
@@ -8,7 +8,8 @@ gulp.task('dev', '*** Create development distribution', ['delete:Files'], functi
 
     runSequence(
         [
-            'generate:IconFont'
+            'generate:IconFont',
+            'copy:Mocks'
         ],
         [
             'copy:Images',
@@ -39,4 +40,8 @@ gulp.task('dev', '*** Create development distribution', ['delete:Files'], functi
         cb
     );
 
+}, {
+    options: {
+        'mocks': 'activate mocks'
+    }
 });

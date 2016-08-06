@@ -17,12 +17,12 @@ export default {
         development: {
             development: true,
             mocks: false,
-            apiUrl: '/resources/data/'
+            apiUrl: '/'
         },
         production: {
             development: false,
             mocks: false,
-            apiUrl: '/resources/data/'
+            apiUrl: '/'
         }
     },
 
@@ -77,7 +77,11 @@ export default {
 
     mocks: {
         src: 'src/resources/mocks/*.json',
-        dest: 'dist/resources/mocks'
+        dest: 'dist/resources/mocks',
+        images: {
+            src: 'src/images/mocks/**/*',
+            dest: 'dist/images/mocks'
+        }
     },
 
     scripts: {
@@ -104,7 +108,7 @@ export default {
 
     images: {
         dir: 'src/images/',
-        src: ['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.svg', '!src/images/icons/*', '!src/images/favicon/*'],
+        src: ['src/images/**/*.png', 'src/images/**/*.jpg', 'src/images/**/*.gif', 'src/images/**/*.svg', '!src/images/icons/*', '!src/images/favicon/*', '!src/images/mocks/*'],
         dest: 'dist/images'
     },
 

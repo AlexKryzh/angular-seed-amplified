@@ -8,7 +8,6 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $logPro
     .state('home', {
         url: '/',
         title: 'page.home.title',
-        controller: 'homeCtrl as home',
         templateUrl: 'home.html',
         resolve: {
             list_deps: function($ocLazyLoad){

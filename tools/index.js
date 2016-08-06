@@ -15,6 +15,7 @@ global.gulpif = gulpif;
 global.config = config;
 global.browserSync = require('browser-sync').create();
 global.cachebust = new CacheBuster();
+global.mocks = util.env.mocks;
 
 const tasks = fs.readdirSync('./tools/tasks/').filter(onlyScripts);
 
