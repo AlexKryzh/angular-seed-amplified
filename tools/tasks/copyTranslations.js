@@ -1,6 +1,6 @@
-import rename                   from 'gulp-rename';
-import jsonlint                    from 'gulp-jsonlint';
-import jsonminify               from 'gulp-jsonminify';
+import rename from 'gulp-rename';
+import jsonlint from 'gulp-jsonlint';
+import jsonminify from 'gulp-jsonminify';
 
 gulp.task('copy:Translations', 'Copy translations', function() {
 

@@ -24,8 +24,8 @@ gulp.task('generate:ConstantModule', 'Create constants module', function() {
         templatePath: config.ngconstants.tpl,
         stream: true
     })
-    .pipe(gulpif(global.mocks, replace('mocks: false', 'mocks: true')))
-    .pipe(gulpif(!global.mocks, replace('mocks: true', 'mocks: false')))
+    .pipe(gulpif(mocks, replace('mocks: false', 'mocks: true')))
+    .pipe(gulpif(!mocks, replace('mocks: true', 'mocks: false')))
     .pipe(rename(config.ngconstants.name))
     .pipe(gulp.dest(config.ngconstants.dest));
   

@@ -1,31 +1,6 @@
 <div>
-    <h3>Filters</h3>
-    <p>{{ '    foo   ' | trim }}</p>
-    <p>{{ 'foobarfoo' | trim: 'foo' }}</p>
-</div>
-
-<div>
-    <h3>Location formats</h3>
-    <span>{{ 35 | currency}}</span>
-    <br>
-    <span>{{ '2016-09-22' | date}}</span>
-</div>
-
-<div>
-    <h3>Mocks (available in 'gulp mocks' task)</h3>
+    <h3>{{ "page.home.button" | translate }}</h3>
     <div>
-        <a ng-href="" class="btn btn-info" ng-click="home.getProducts()">Get Items</a>
+        <a ui-sref="items" class="btn btn-info">{{ "page.home.button" | translate }}</a>
     </div>
 </div>
-
-<ul ng-show="home.products.length>0">
-    <li ng-repeat="product in home.products">{{product.name}}</li>
-</ul>
-
-<div>
-    <h3>Icon, Animation</h3>
-    <span class="icon icon-cross animation-spin"></span>
-</div>
-
-<br>
-<br>

@@ -1,10 +1,10 @@
 import items from '../../resources/mocks/items.json';
 
-function ProductsMocks($httpBackend) {
+function ItemsMocks($httpBackend, AppSettings) {
     'ngInject';
 
-    $httpBackend.whenGET('items.json').respond(items.items);
+    $httpBackend.whenGET(AppSettings.apiUrl + 'items.json').respond(items);
 
 }
 
-export default ProductsMocks;
+export default ItemsMocks;

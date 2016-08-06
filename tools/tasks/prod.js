@@ -1,6 +1,6 @@
-import runSequence            from 'run-sequence';
+import runSequence from 'run-sequence';
 
-gulp.task('prod', '*** Create production distribution folder', ['delete:Files'], function(cb) {
+gulp.task('prod', 'Create production distribution folder', ['delete:Files'], function(cb) {
 
     cb = cb || function() {};
 
@@ -9,7 +9,8 @@ gulp.task('prod', '*** Create production distribution folder', ['delete:Files'],
     runSequence(
         [
             'generate:IconFont',
-            'create:Favicons'
+            'create:Favicons',
+            'copy:Mocks'
         ],
         [
             'copy:Images',
@@ -44,4 +45,8 @@ gulp.task('prod', '*** Create production distribution folder', ['delete:Files'],
         cb
     );
 
+}, {
+    options: {
+        'mocks': 'activate mocks'
+    }
 });
