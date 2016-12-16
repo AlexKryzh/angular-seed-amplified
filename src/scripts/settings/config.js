@@ -33,6 +33,20 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $logPro
         }
     })
 
+    .state('paint', {
+        url: '/paint',
+        title: 'page.paint.title',
+        controller: 'paintCtrl as paint',
+        templateUrl: 'paint.html',
+        resolve: {
+            list_deps: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                    files: ['/scripts/paint.js']
+                });
+            }
+        }
+    })
+
     .state('styleguide', {
         url: '/styleguide',
         title: 'page.styleguide.title',

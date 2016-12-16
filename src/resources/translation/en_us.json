@@ -33,6 +33,7 @@
     "header":{
         "menu":{
             "home": "Home",
+            "paint": "Paint",
             "items": "Items",
             "style_guide": "StyleGuide"
         }

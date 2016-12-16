@@ -1,0 +1,32 @@
+<div class="paint">
+    <h1>Paint</h1>
+    <div class="screen"></div>
+    <div>
+        <h2>Preview</h2>
+        <div class="preview" ng-style="{'background-color': color, 'height': line + 'px', 'opacity': opacity}"></div>
+    </div>
+    <div class="line">
+        <h2>Line</h2>
+        <input type="range" min="1" max="10" ng-module="line">
+    </div>
+    <div class="opacity">
+        <h2>Opacity</h2>
+        <input type="range" min="0.1" max="1" ng-module="opacity">
+    </div>
+    <div class="colors">
+        <h2>Colors</h2>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-2">
+                <div class="color large" ng-style="{'background-color': color}"></div>
+                <div>
+                    <input type="color" value="{{color}}" maxLength="7" ng-model="color" />
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-10">
+                <ul>
+                    <li ng-repeat="color in colors" ng-click="setColor(color)" class="color" ng-style="{'background-color': color}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

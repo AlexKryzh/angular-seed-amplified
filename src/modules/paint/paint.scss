@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+body#page-paint {
+    .paint {
+        .screen{
+            background-color: #fff;
+            border: 2px solid rgba(0,0,0,.1);
+            height: 400px;
+            margin: 10px auto;
+            width: 600px;
+        }
+        .preview{
+            width: 300px;
+            margin: 10px auto;
+        }
+        .colors{
+            .row{
+                text-align: center;
+            }
+            .color{
+                border-radius: 100%;
+                border: 2px solid rgba(0,0,0,.1);
+                cursor: pointer;
+                margin: 3px;
+                display: inline-block;
+                height: 30px;
+                width: 30px;
+                &.large{
+                    height: 60px;
+                    width: 60px;
+                }
+            }
+        }
+    }
+}

@@ -33,6 +33,7 @@
     "header":{
         "menu":{
             "home": "Inicio",
+            "paint": "Paint",
             "items": "Artículos",
             "style_guide": "Guía de estilo"
         }

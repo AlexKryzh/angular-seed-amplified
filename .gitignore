@@ -24,6 +24,8 @@ node_modules
 
 # Build files
 dist
+typings
+tsd.d.ts
 src/scripts/*_tpl.js
 src/scripts/settings/constants.js
 src/styles/_fonts.scss
