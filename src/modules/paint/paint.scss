@@ -1,34 +1,45 @@
 @import '../../styles/variables';
 
 body#page-paint {
-    .paint {
-        .screen{
-            background-color: #fff;
-            border: 2px solid rgba(0,0,0,.1);
-            height: 400px;
-            margin: 10px auto;
-            width: 600px;
-        }
+    .screen{
+        background-color: #fff;
+        box-shadow: rgba(0,0,0, .2) 0 0 10px;
+        margin: 10px 0;
+        position: relative;
+    }
+    .col-preview{
+        height: 90px;
         .preview{
-            width: 300px;
+            border: 2px solid rgba(0,0,0,.1);
             margin: 10px auto;
+            position: relative;
+            width: 300px;
         }
-        .colors{
-            .row{
-                text-align: center;
+    }
+    .colors{
+        .row{
+            text-align: center;
+        }
+        .picker{
+            margin-bottom: 20px;
+        }
+        ul{
+            padding: 0;
+        }
+        .color{
+            border-radius: 100%;
+            border: 2px solid rgba(0,0,0,.1);
+            cursor: pointer;
+            margin: 3px;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            &.large{
+                height: 60px;
+                width: 60px;
             }
-            .color{
-                border-radius: 100%;
-                border: 2px solid rgba(0,0,0,.1);
-                cursor: pointer;
-                margin: 3px;
-                display: inline-block;
-                height: 30px;
-                width: 30px;
-                &.large{
-                    height: 60px;
-                    width: 60px;
-                }
+            &.active{
+                border: 4px solid rgba(255,255,255,.5);
             }
         }
     }

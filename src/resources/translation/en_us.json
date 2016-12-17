@@ -16,6 +16,17 @@
                 "price_highest": "highest price"
             }
         },
+        "paint": {
+            "title": "Paint",
+            "edit": "Edit",
+            "undo": "Undo",
+            "redo": "Redo",
+            "options": "Options",
+            "preview": "Preview",
+            "thickness": "Thickness",
+            "opacity": "Opacity",
+            "colour": "Colour"
+        },
         "items":{
             "filter": "search",
             "filter_placeholder": "Search item...",
@@ -42,6 +53,9 @@
         "home": {
             "title": "Home",
             "button": "Show Items"
+        },
+        "paint": {
+            "title": "Paint"
         },
         "items": {
             "title": "Items",

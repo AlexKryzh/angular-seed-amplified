@@ -16,6 +16,17 @@
                 "price_highest": "los precios más altos"
             }
         },
+        "paint": {
+            "title": "Paint",
+            "edit": "Editar",
+            "undo": "Deshacer",
+            "redo": "Rehacer",
+            "options": "Opciones",
+            "preview": "Vista Previa",
+            "thickness": "Grosor",
+            "opacity": "Opacidad",
+            "colour": "Color"
+        },
         "items":{
             "filter": "búsqueda",
             "filter_placeholder": "Buscar artículo...",
@@ -42,6 +53,9 @@
         "home": {
             "title": "Inicio",
             "button": "Mostrar Artículos"
+        },
+        "paint": {
+            "title": "Paint"
         },
         "items": {
             "title": "Artículos",
